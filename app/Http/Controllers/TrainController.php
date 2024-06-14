@@ -13,7 +13,7 @@ class TrainController extends Controller
      */
     public function index()
     {
-        $trains = Train::all();
+        $trains = Train::all()->sortBy(['number','asc']);
 
         return view('train.monitoring', compact('trains'));
     }

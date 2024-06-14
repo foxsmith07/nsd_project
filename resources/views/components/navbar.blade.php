@@ -9,8 +9,8 @@
         <div class="navbar-nav me-auto">
             <div class="d-flex justify-content-center align-items-center nav-item">
                 <a href="{{route('monitoring')}}" class="nav-link text-decoration-none me-2">Monitoring</a>
-                <a href="{{route('contact.us')}}" class="nav-link text-decoration-none mx-2">Contact us</a>
-                <a href="{{route('about.us')}}" class="nav-link text-decoration-none mx-2">About us</a>
+                <a href="{{route('contact.me')}}" class="nav-link text-decoration-none mx-2">Contact Me</a>
+                <a href="{{route('about.me')}}" class="nav-link text-decoration-none mx-2">About Me</a>
             </div>
 
         </div>

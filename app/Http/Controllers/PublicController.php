@@ -9,10 +9,10 @@ class PublicController extends Controller
     public function home(){
         return view('welcome');
     }
-    public function contactUs(){
-        return view('contactUs');
+    public function contactMe(){
+        return view('contactMe');
     }
-    public function aboutUs(){
-        return view('aboutUs');
+    public function aboutMe(){
+        return view('aboutMe');
     }
 }

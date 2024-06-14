@@ -27,6 +27,7 @@
                             <th scope="col">Users</th>
                             <th scope="col" colspan="3" class="text-center">Links</th>
                             <th scope="col">Last check</th>
+                            <th scope="col" class="text-center">Actions</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -48,6 +49,11 @@
                                     <span class="btn btn-success btn-sm">B2M1</span>
                                 </td>
                                 <td>{{$train->created_at->format('d/m/Y - H:i')}}</td>
+                                <td class="text-center">
+                                    <a href="" class="btn btn-primary btn-sm">details</a>
+                                    <a href="" class="btn btn-warning btn-sm">edit</a>
+                                    <a href="" class="btn btn-danger btn-sm">remove</a>
+                                </td>
                             </tr>
 
                         @empty
