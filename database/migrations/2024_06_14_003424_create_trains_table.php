@@ -19,8 +19,6 @@ return new class extends Migration
             $table->string('next_trip');
             $table->string('speed');
             $table->string('users');
-            $table->string('links');
-            $table->string('last_check');
             $table->timestamps();
         });
     }

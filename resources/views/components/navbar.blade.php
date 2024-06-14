@@ -30,7 +30,7 @@
                     <i class="fa-solid fa-user"></i>
                     {{ Auth::user()->name }}
                 </button>
-                <ul class="dropdown-menu">
+                <ul class="dropdown-menu dropdown-menu-end">
                     <li><a class="dropdown-item" href="{{route('insert.train')}}">Insert Train</a></li>
                     <li><a class="dropdown-item" href="#">Work in progress</a></li>
                     <li>

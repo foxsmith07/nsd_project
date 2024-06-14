@@ -1,13 +1,16 @@
 <?php
 
 use App\Http\Controllers\PublicController;
+use App\Http\Controllers\TrainController;
 use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/', [PublicController::class, 'home'])->name('home');
-    Route::get('/monitoring', [PublicController::class, 'monitoring'])->name('monitoring');
-    Route::get('/insert/train', [PublicController::class, 'insert'])->name('insert.train');
     Route::get('/contactUs', [PublicController::class, 'contactUs'])->name('contact.us');
     Route::get('/aboutUs', [PublicController::class, 'aboutUs'])->name('about.us');
+    
+    Route::get('/monitoring', [TrainController::class, 'index'])->name('monitoring');
 
+    Route::get('/insert/train', [TrainController::class, 'create'])->name('insert.train');
+    Route::post('/train/store', [TrainController::class, 'store'])->name('train.store');
 });

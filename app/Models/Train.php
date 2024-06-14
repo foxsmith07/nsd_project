@@ -10,6 +10,6 @@ class Train extends Model
     use HasFactory;
 
     protected $fillable = [
-        'number','trip','location','next_trip','speed','users','links','last_check'
+        'number','trip','location','next_trip','speed','users'
     ];
 }
