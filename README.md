@@ -5,7 +5,6 @@ website tool to monitoring with all Server data...
 
 ## to do list..
 - Contact us page
-- About us page
 - Train Detail page
 
 
@@ -18,7 +17,9 @@ website tool to monitoring with all Server data...
     - (to add all trains positions)
 
 - Monitoring page 
-    table sort by asc 'number'
+    - table sort by asc 'number'
+    - edit train function
+    - remove train function
 
 - Insert Train page
     - Train Model + migration
@@ -31,3 +32,7 @@ website tool to monitoring with all Server data...
 
 - Error page
     - completa in inglese
+
+- Contact page
+    - Form
+    - Ulteriori contatti

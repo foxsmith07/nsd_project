@@ -54,24 +54,34 @@ class TrainController extends Controller
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
+    public function edit(Train $train)
     {
-        //
+        return view('train.edit', compact('train'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(TrainRequest $request, Train $train)
     {
-        //
+        $train->update([
+            'number'=>$request->input('number'),
+            'trip'=>$request->input('trip'),
+            'location'=>$request->input('location'),
+            'next_trip'=>$request->input('next_trip'),
+            'speed'=>$request->input('speed'),
+            'users'=>$request->input('users'),
+        ]);
+
+        return redirect()->route('monitoring')->with('msg','Train successfully modified!');
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Train $train)
     {
-        //
+        $train->delete();
+        return redirect()->route('monitoring')->with('msg', 'Train successfully deleted');
     }
 }

@@ -51,8 +51,12 @@
                                 <td>{{$train->created_at->format('d/m/Y - H:i')}}</td>
                                 <td class="text-center">
                                     <a href="" class="btn btn-primary btn-sm">details</a>
-                                    <a href="" class="btn btn-warning btn-sm">edit</a>
-                                    <a href="" class="btn btn-danger btn-sm">remove</a>
+                                    <a href="{{route('train.edit', compact('train'))}}" class="btn btn-warning btn-sm">edit</a>
+                                    <form action="{{route('train.destroy', $train)}}" method="POST" class=" d-inline-flex">
+                                        @csrf
+                                        @method('delete')
+                                        <button class="btn btn-danger btn-sm" type="submit">remove</button>
+                                    </form>
                                 </td>
                             </tr>
 

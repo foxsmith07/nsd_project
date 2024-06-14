@@ -13,4 +13,8 @@ Route::middleware(['auth'])->group(function(){
 
     Route::get('/insert/train', [TrainController::class, 'create'])->name('insert.train');
     Route::post('/train/store', [TrainController::class, 'store'])->name('train.store');
+
+    Route::get('/train/edit/{train}', [TrainController::class, 'edit'])->name('train.edit');
+    Route::put('/train/update/{train}',[TrainController::class, 'update'])->name('train.update');
+    Route::delete('train/{train}/destroy',[TrainController::class, 'destroy'])->name('train.destroy');
 });
