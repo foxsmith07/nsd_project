@@ -1,21 +1,23 @@
 <x-layout>
     <div style="height: 70px"></div>
     {{--? HEADER + STATUS MESSAGE --}}
-    <div class=" d-flex flex-column justify-content-center align-items-center">
-        <h1 class="text-center my-4">TRAIN MONITORING PAGE</h1>
-        @if (session('msg'))
-            <div class="alert alert-success alert-dismissible border-3 fade show w-25" role="alert">
-                <strong><i class="fa-solid fa-circle-check me-2"></i>{{ session('msg') }}</strong>
-                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
-        @endif
-    </div>
+    <header class="container-fluid">
+        <div class="row d-flex flex-column justify-content-center align-items-center">
+            <h1 class="text-center my-4">TRAIN MONITORING PAGE</h1>
+            @if (session('msg'))
+                <div class="alert alert-success alert-dismissible border-3 fade show w-25" role="alert">
+                    <strong><i class="fa-solid fa-circle-check me-2"></i>{{ session('msg') }}</strong>
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                </div>
+            @endif
+        </div>
+    </header>
 
     {{--* TABLE MONITORING  --}}
     
     <div class="container-fluid">
         <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-12">
+            <div class="col-12 p-0">
                 <table class="table table-striped">
                     <thead>
                         <tr class=" table-dark">
@@ -50,7 +52,7 @@
                                 </td>
                                 <td>{{$train->created_at->format('d/m/Y - H:i')}}</td>
                                 <td class="text-center">
-                                    <a href="" class="btn btn-primary btn-sm">details</a>
+                                    <a href="{{route('train.details', compact('train'))}}" class="btn btn-primary btn-sm">details</a>
                                     <a href="{{route('train.edit', compact('train'))}}" class="btn btn-warning btn-sm">edit</a>
                                     <form action="{{route('train.destroy', $train)}}" method="POST" class=" d-inline-flex">
                                         @csrf

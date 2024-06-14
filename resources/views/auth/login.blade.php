@@ -5,7 +5,7 @@
 
     <div class="container-fluid">
         <div class="row justify-content-center">
-            <div class="col-4 d-flex flex-column justify-content-center align-items-center shadow rounded-5 p-5" style="background-color: #e0e1dd">
+            <div class="col-4 d-flex flex-column justify-content-center align-items-center shadow rounded-5 p-5 main-color">
                 <img src="https://www.svgrepo.com/show/484543/data.svg" alt="" width="80">
                 <h1 class="text-center mb-2">Network Service Desk</h1>
                 <hr class="border border-secondary border-1 w-100">

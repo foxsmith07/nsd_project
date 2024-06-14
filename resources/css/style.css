@@ -1,3 +1,9 @@
 body {
+    /* background: linear-gradient(145deg, #edf2f4 80%, #ffed4b 20%); */
+    /* background: linear-gradient(180deg, #EAEAEA 20%, #edf2f4 80%); */
     background-color: #edf2f4;
+}
+.main-color {
+    background: linear-gradient(145deg,red 10%, #edf2f4 10% 85%, red 15%);
+    /* background-color: #edf2f4; */
 }

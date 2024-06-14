@@ -46,9 +46,10 @@ class TrainController extends Controller
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Train $train)
     {
-        //
+        $trains = Train::all()->sortBy(['number','asc']);
+        return view('train.details', compact('train','trains'));
     }
 
     /**

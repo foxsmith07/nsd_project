@@ -5,7 +5,7 @@ website tool to monitoring with all Server data...
 
 ## to do list..
 - Contact us page
-- Train Detail page
+- Details page / make map dynamic
 
 
 ## Done
@@ -36,3 +36,8 @@ website tool to monitoring with all Server data...
 - Contact page
     - Form
     - Ulteriori contatti
+
+- Details page
+    - static map (to change in dynamic)
+    - table train
+
