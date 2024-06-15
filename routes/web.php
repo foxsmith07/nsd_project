@@ -6,9 +6,11 @@ use Illuminate\Support\Facades\Route;
 
 Route::middleware(['auth'])->group(function(){
     Route::get('/', [PublicController::class, 'home'])->name('home');
-    Route::get('/contactMe', [PublicController::class, 'contactMe'])->name('contact.me');
     Route::get('/aboutMe', [PublicController::class, 'aboutMe'])->name('about.me');
     
+    Route::get('/contactMe', [PublicController::class, 'contactMe'])->name('contact.me');
+    Route::post('/contactMe/submit',[PublicController::class, 'mailMe'])->name('mail.me');
+
     Route::get('/monitoring', [TrainController::class, 'index'])->name('monitoring');
 
     Route::get('/insert/train', [TrainController::class, 'create'])->name('insert.train');

@@ -1,6 +1,6 @@
 <nav class="navbar bg-body-tertiary fixed-top" data-bs-theme="dark">
     <div class="container-fluid">
-        <a class="navbar-brand" href="#">
+        <a class="navbar-brand" href="{{route('home')}}">
             <img src="https://www.svgrepo.com/show/484543/data.svg" alt="Logo" width="30" height="24" class="d-inline-block align-text-top">
             Network Service Desk
         </a>

@@ -15,16 +15,20 @@
                     </div>
     
                     <div class="col-12 col-md-7">
-                        <form>
+                        <form method="POST" action="{{route('mail.me')}}">
+                            @csrf
                             <div class="mb-3">
                                 <label for="name" class="form-label">Nome</label>
-                                <input type="text" class="form-control" id="name" name="name">
+                                <input type="text" class="form-control" id="name" name="name" value="{{Auth::user()->name}}" disabled>
                             </div>
                             <div class="mb-3">
                                 <label for="mail" class="form-label">Email</label>
-                                <input type="email" class="form-control" id="mail" name="email">
+                                <input type="email" class="form-control" id="mail" name="email" value="{{Auth::user()->email}}" disabled>
                             </div>
-            
+                            <div class="mb-3">
+                                <label for="object" class="form-label">Oggetto</label>
+                                <input type="text" class="form-control" id="object" name="object">
+                            </div>                            
                             <div class="mb-3">
                                 <label for="body" class="form-label">Messaggio o Feedback</label>
                                 <textarea name="body" id="body" cols="30" rows="10" class="form-control"></textarea>
