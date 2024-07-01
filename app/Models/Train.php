@@ -12,4 +12,5 @@ class Train extends Model
     protected $fillable = [
         'number','trip','location','next_trip','speed','users'
     ];
+    
 }
