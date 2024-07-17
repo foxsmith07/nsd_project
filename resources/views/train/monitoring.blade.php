@@ -1,9 +1,9 @@
 <x-layout>
     <div style="height: 70px"></div>
-    {{--? HEADER + STATUS MESSAGE --}}
+    {{-- ? HEADER + STATUS MESSAGE --}}
     <header class="container-fluid">
         <div class="row d-flex flex-column justify-content-center align-items-center">
-            <h1 class="text-center my-4">TRAIN MONITORING PAGE</h1>
+            {{-- <h1 class="text-center my-4">TRAIN MONITORING PAGE</h1> --}}
             @if (session('msg'))
                 <div class="alert alert-success alert-dismissible border-3 fade show w-25" role="alert">
                     <strong><i class="fa-solid fa-circle-check me-2"></i>{{ session('msg') }}</strong>
@@ -13,65 +13,24 @@
         </div>
     </header>
 
-    {{--* TABLE MONITORING  --}}
-    
-    <div class="container-fluid">
-        <div class="row d-flex justify-content-center align-items-center">
-            <div class="col-12 p-0">
-                <table class="table table-striped">
-                    <thead>
-                        <tr class=" table-dark">
-                            <th scope="col">Train</th>
-                            <th scope="col">Trip</th>
-                            <th scope="col">Location</th>
-                            <th scope="col">Next trip</th>
-                            <th scope="col">Speed</th>
-                            <th scope="col">Users</th>
-                            <th scope="col" colspan="3" class="text-center">Links</th>
-                            <th scope="col">Last check</th>
-                            <th scope="col" class="text-center">Actions</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        @forelse ($trains as $train)
-                            <tr>
-                                <th scope="row">{{$train->number}}</th>
-                                <td>{{$train->trip}}</td>
-                                <td>{{$train->location}}</td>
-                                <td>{{$train->next_trip}}</td>
-                                <td>{{$train->speed}} km/h</td>
-                                <td>
-                                    <span class="btn btn-success btn-sm">{{$train->users}}</span>
-                                    <span class="btn btn-success btn-sm">07</span>
-                                </td>
-                                <td colspan="3" class="text-center">
-                                    <span class="btn btn-success btn-sm">B1M0</span>
-                                    <span class="btn btn-success btn-sm">B1M1</span>
-                                    <span class="btn btn-danger btn-sm">B2M0</span>
-                                    <span class="btn btn-success btn-sm">B2M1</span>
-                                </td>
-                                <td>{{$train->created_at->format('d/m/Y - H:i')}}</td>
-                                <td class="text-center">
-                                    <a href="{{route('train.details', compact('train'))}}" class="btn btn-primary btn-sm">details</a>
-                                    <a href="{{route('train.edit', compact('train'))}}" class="btn btn-warning btn-sm">edit</a>
-                                    <form action="{{route('train.destroy', $train)}}" method="POST" class=" d-inline-flex">
-                                        @csrf
-                                        @method('delete')
-                                        <button class="btn btn-danger btn-sm" type="submit">remove</button>
-                                    </form>
-                                </td>
-                            </tr>
+    <main class="container-fluid">
+        <div class="row">
+            {{-- todo LEFT --}}
+            <div class="col-2 p-2 min-vh-100 bg-secondary-subtle">
+                
+                <x-left />
 
-                        @empty
-                        <tr>
-                            <td class="fw-bold text-danger fs-4" colspan="100%">NO TRAIN ADDED ... </td>
-                        </tr>
-                        @endforelse
+            </div>
 
-                    </tbody>
-                </table>
+
+            {{-- todo Right side  --}}
+            <div class="col-10">
+
+                <x-right :$trains />
 
             </div>
         </div>
-    </div>
+
+    </main>
+
 </x-layout>
